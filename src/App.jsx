@@ -1,6 +1,6 @@
 import TaskList from "./components/TaskList";
 import TaskForm from "./components/TaskForm";
-import TaskDone from "./components/TaskDone";
+import TaskListDone from "./components/TaskListDone"
 import TaskFormDone from "./components/TaskFormDone";
 
 function App() {
@@ -12,7 +12,7 @@ function App() {
         <TaskList />
         <h1 className="text-4xl font-bold text-center p-2 m-4 text-white bg-slate-500">Tareas realizadas</h1>
         <TaskFormDone />
-        <TaskDone />
+        <TaskListDone />
       </div>
     </main>
   );

@@ -1,14 +1,25 @@
 import { useContext } from "react";
 import { TaskContext } from "../context/TaskContext";
 
-function TaskDone({ task }) {
-  const { updateTask } = useContext(TaskContext);
-  const { completedTasks } = useContext(TaskContext);
+function TaskDone({ completeTask }) {
+  const { deleteTask, updateTask } = useContext(TaskContext);
 
   return (
     <div className="bg-gray-800 text-white p-4 rounded-md">
-      <h1 className="text-xl font-bold capitalize">dsds</h1>
-      <p className="text-gray-500 text-sm">asdas</p>
+      <h1 className="text-xl font-bold capitalize">14</h1>
+      <p className="text-gray-500 text-sm">414</p>
+      <button
+        className="bg-red-500 px-2 py-1 rounded-md mt-4 hover:bg-red-400"
+        onClick={() => deleteTask(completeTask.id)}
+      >
+        Eliminar Tarea
+      </button>
+      <button
+        className="bg-green-500 px-2 py-1 rounded-md mt-4 hover:bg-green-400 m-2"
+        onClick={() => updateTask(completeTask.id)}
+      >
+        Tarea realizada
+      </button>
     </div>
   );
 }

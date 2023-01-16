@@ -23,10 +23,10 @@ export function TaskContextProvider(props) {
   }
 
   function updateTask(taskId) {
-    const taskToUpdate = tasks.find((task) => task.id === taskId);
-    taskToUpdate.completed = true;
-    setCompletedTasks(tasks.filter((task) => task.completed === true));
-    setTasks([...tasks]);
+    const taskToComplete = tasks.find((task) => task.id === taskId);
+    const updatedTasks = tasks.filter((task) => task.id !== taskId);
+    setCompletedTasks([...completedTasks, taskToComplete]);
+    setTasks(updatedTasks);
   }
 
   useEffect(() => {

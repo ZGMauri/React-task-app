@@ -16,7 +16,8 @@ function TaskCard({ task }) {
       </button>
       <button
         className="bg-green-500 px-2 py-1 rounded-md mt-4 hover:bg-green-400 m-2"
-        onClick={() => updateTask(task.id)}
+        onClick={() => updateTask(task.id)
+        }
       >
         Tarea realizada
       </button>

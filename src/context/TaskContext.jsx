@@ -5,6 +5,7 @@ export const TaskContext = createContext();
 
 export function TaskContextProvider(props) {
   const [tasks, setTasks] = useState([]);
+  const [completedTasks, setCompletedTasks] = useState([]);
 
   function createTask(task) {
     setTasks([
@@ -24,7 +25,7 @@ export function TaskContextProvider(props) {
   function updateTask(taskId) {
     const taskToUpdate = tasks.find((task) => task.id === taskId);
     taskToUpdate.completed = true;
-    const completedTasks = tasks.filter((task) => task.completed === true);
+    setCompletedTasks(tasks.filter((task) => task.completed === true));
     setTasks([...tasks]);
   }
 

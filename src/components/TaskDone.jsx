@@ -3,6 +3,7 @@ import { TaskContext } from "../context/TaskContext";
 
 function TaskDone({ task }) {
   const { updateTask } = useContext(TaskContext);
+  const { completedTasks } = useContext(TaskContext);
 
   return (
     <div className="bg-gray-800 text-white p-4 rounded-md">

@@ -1,13 +1,13 @@
 import { useContext } from "react";
 import { TaskContext } from "../context/TaskContext";
 
-function TaskDone({ completeTask }) {
+function TaskDone( props ) {
   const { deleteTask, updateTask } = useContext(TaskContext);
 
   return (
     <div className="bg-gray-800 text-white p-4 rounded-md">
-      <h1 className="text-xl font-bold capitalize">14</h1>
-      <p className="text-gray-500 text-sm">414</p>
+      <h1 className="text-xl font-bold capitalize">{props.completeTask.title}</h1>
+      <p className="text-gray-500 text-sm">{props.completeTask.description}</p>
       <button
         className="bg-red-500 px-2 py-1 rounded-md mt-4 hover:bg-red-400"
         onClick={() => deleteTask(completeTask.id)}

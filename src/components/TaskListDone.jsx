@@ -15,9 +15,9 @@ function TaskListDone() {
 
   return (
     <div className="grid grid-cols-4 gap-2">
-      {completedTasks.map((completedTask) => (
-        <TaskDone key={completedTask.id} completedTask={completedTask} />
-      ))}
+      {completedTasks.map((task) => (
+  <TaskDone key={task.id} completeTask={task} />
+))}
     </div>
   );
 }

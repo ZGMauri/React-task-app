@@ -7,7 +7,7 @@ export default function DarkMode() {
 
   return (
     <div>
-      <button className=" bg-gray-500" onClick={() => changeMode()}>
+      <button onClick={changeMode}>
         Modo nocturno <MdNightlightRound />
       </button>
     </div>

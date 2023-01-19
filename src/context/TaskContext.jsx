@@ -6,7 +6,7 @@ export const TaskContext = createContext();
 export function TaskContextProvider(props) {
   const [tasks, setTasks] = useState([]);
   const [completedTasks, setCompletedTasks] = useState([]);
-  const [style, setStyle] = useState("bg-zinc-900 h-screen");
+  const [style, setStyle] = useState("bg-zinc-100 h-screen");
 
   function createTask(task) {
     setTasks([
@@ -30,9 +30,11 @@ export function TaskContextProvider(props) {
     setTasks(updatedTasks);
   }
 
-  function changeMode(style) {
-    setStyle("bg-zinc-100 h-screen")
-  }
+  function changeMode() {
+    if (style === "bg-zinc-100 h-screen"){
+      setStyle("bg-zinc-900 h-screen")
+    } else {setStyle("bg-zinc-100 h-screen")}
+   }
 
   useEffect(() => {
     setTasks(data);
